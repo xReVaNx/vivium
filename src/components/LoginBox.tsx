@@ -1,9 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import Logo from "../images/vivium.png";
 import "../scss/loginBox.scss";
 import { createTheme, ThemeProvider, Button, TextField } from "@mui/material";
 import { useForm, SubmitHandler } from "react-hook-form";
-import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { userSchema } from "../Validations/UserValidation";
 
@@ -20,13 +19,14 @@ type Inputs = {
   password: string;
 };
 
-const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+const onSubmit: SubmitHandler<Inputs> = (data) => {
+  console.log(data);
+};
 
-function LoginBox() {
+export default function LoginBox() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<Inputs>({ resolver: yupResolver(userSchema) });
 
@@ -75,5 +75,3 @@ function LoginBox() {
     </ThemeProvider>
   );
 }
-
-export default LoginBox;
