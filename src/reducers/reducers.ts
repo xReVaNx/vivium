@@ -1,7 +1,7 @@
 import { AUTH_ACTIONS, USER_ACTIONS } from "../actions/constActions";
 import { combineReducers } from "redux";
 
-export const authReducer = (state: any = { isAuth: false }, action: any) => {
+export const authReducer = (state: any = { isAuth: true }, action: any) => {
   switch (action.type) {
     case AUTH_ACTIONS.AUTH_LOGIN:
       return { isAuth: true };

@@ -1,4 +1,12 @@
-h1 {
-  font-size: 24px;
-  color: white;
+@import "colors";
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+.home-container {
+  background-color: white;
+  width: 100%;
+  min-height: 950px;
 }
