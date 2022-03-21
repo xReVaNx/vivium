@@ -13,36 +13,47 @@
       "password": "test"
     }
   ],
+
   "employees": [
     {
       "id": 1,
       "firstName": "John",
       "lastName": "Mick",
-      "age": 32
+      "seniority": 32,
+      "dateOfBirth": "21-09-1978",
+      "engagement": 60
     },
     {
       "id": 2,
       "firstName": "Susanne",
       "lastName": "Cormier",
-      "age": 24
+      "seniority": 24,
+      "dateOfBirth": "16-03-1984",
+      "engagement": 40
     },
     {
       "id": 3,
       "firstName": "Burley",
       "lastName": "Hamill",
-      "age": 57
+      "seniority": 57,
+      "dateOfBirth": "27-06-1961",
+      "engagement": 90
     },
     {
       "id": 4,
       "firstName": "Frederique",
       "lastName": "Raynor",
-      "age": 43
+      "seniority": 43,
+      "dateOfBirth": "12-12-172",
+      "engagement": 75
     },
     {
       "id": 5,
       "firstName": "Shanel",
       "lastName": "Brown",
-      "age": 37
+      "seniority": 37,
+      "dateOfBirth": "05-02-1973",
+      "engagement": 62
     }
   ]
 }

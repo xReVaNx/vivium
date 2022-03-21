@@ -7,3 +7,7 @@ export const USER_ACTIONS = {
   USER_SAVE: "USER/SAVE",
   USER_REMOVE: "USER/REMOVE",
 };
+
+export const DATA_ACTIONS = {
+  DATA_GET: "DATA/GET",
+};
