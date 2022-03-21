@@ -1,0 +1,4 @@
+export const AUTH_ACTIONS = {
+  AUTH_LOGIN: "AUTH/LOGIN",
+  AUTH_LOGOUT: "AUTH/LOGOUT",
+};

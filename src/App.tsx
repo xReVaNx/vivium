@@ -6,7 +6,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SignInPage />} />
+        <Route path="/login" element={<SignInPage />} />
       </Routes>
     </BrowserRouter>
   );
