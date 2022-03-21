@@ -1,6 +1,7 @@
-import { AUTH_ACTIONS } from "../actions/constActions";
+import { AUTH_ACTIONS, USER_ACTIONS } from "../actions/constActions";
+import { combineReducers } from "redux";
 
-export const authReducer = (state: any = { isAuth: true }, action: any) => {
+export const authReducer = (state: any = { isAuth: false }, action: any) => {
   switch (action.type) {
     case AUTH_ACTIONS.AUTH_LOGIN:
       return { isAuth: true };
@@ -10,3 +11,22 @@ export const authReducer = (state: any = { isAuth: true }, action: any) => {
       return state;
   }
 };
+
+export const userReducer = (
+  state: any = { email: "", password: "" },
+  action: any
+) => {
+  switch (action.type) {
+    case USER_ACTIONS.USER_SAVE:
+      return {
+        email: action.payload.email,
+        password: action.payload.password,
+      };
+    case USER_ACTIONS.USER_REMOVE:
+      return { email: "", password: "" };
+    default:
+      return state;
+  }
+};
+
+export const rootReducer = combineReducers({ authReducer, userReducer });

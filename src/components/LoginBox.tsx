@@ -1,10 +1,14 @@
 import React from "react";
 import Logo from "../images/vivium.png";
 import "../scss/loginBox.scss";
+import { useNavigate } from "react-router-dom";
 import { createTheme, ThemeProvider, Button, TextField } from "@mui/material";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { userSchema } from "../Validations/UserValidation";
+import { getUser } from "../api/requests";
+import store from "../store/store";
+import { authLogin } from "../actions/authActions";
 
 const theme = createTheme({
   palette: {
@@ -19,11 +23,26 @@ type Inputs = {
   password: string;
 };
 
-const onSubmit: SubmitHandler<Inputs> = (data) => {
-  console.log(data);
-};
-
 export default function LoginBox() {
+  let navigate = useNavigate();
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    login(data);
+  };
+
+  const login = async (inputData: any) => {
+    await getUser(inputData.email);
+    if (
+      inputData.email == store.getState().userReducer.email &&
+      inputData.password == store.getState().userReducer.password
+    ) {
+      authLogin();
+      navigate("/");
+    } else {
+      console.log("Niepoprawne dane");
+    }
+  };
+
   const {
     register,
     handleSubmit,

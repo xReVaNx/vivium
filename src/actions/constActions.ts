@@ -2,3 +2,8 @@ export const AUTH_ACTIONS = {
   AUTH_LOGIN: "AUTH/LOGIN",
   AUTH_LOGOUT: "AUTH/LOGOUT",
 };
+
+export const USER_ACTIONS = {
+  USER_SAVE: "USER/SAVE",
+  USER_REMOVE: "USER/REMOVE",
+};

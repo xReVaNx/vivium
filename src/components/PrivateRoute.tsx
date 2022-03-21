@@ -5,7 +5,7 @@ import HomePage from "../pages/HomePage";
 
 const PrivateRoute = () => {
   console.log(store.getState());
-  return store.getState().isAuth ? (
+  return store.getState().authReducer.isAuth ? (
     <HomePage />
   ) : (
     <Navigate replace to="/login" />
